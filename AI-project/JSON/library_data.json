@@ -1,0 +1,104 @@
+{
+  "nodes": {
+    "Entrance": { "x": 0, "y": 0, "restricted": false },
+    "CS_Section": { "x": 2, "y": 2, "restricted": false },
+    "AI_Section": { "x": 4, "y": 4, "restricted": false },
+    "Math_Section": { "x": 2, "y": -2, "restricted": false },
+    "Physics_Section": { "x": 4, "y": -4, "restricted": false },
+    "Literature": { "x": -2, "y": 2, "restricted": false },
+    "History": { "x": -4, "y": 4, "restricted": false },
+    "Reference": { "x": -2, "y": -2, "restricted": false },
+    "Restricted_Archive": { "x": 6, "y": 0, "restricted": true }
+  },
+  "edges": [
+    { "from": "Entrance", "to": "CS_Section", "distance": 10, "time": 10 },
+    { "from": "Entrance", "to": "Math_Section", "distance": 8, "time": 8 },
+    { "from": "Entrance", "to": "Literature", "distance": 12, "time": 12 },
+    { "from": "Entrance", "to": "Reference", "distance": 5, "time": 5 },
+    { "from": "CS_Section", "to": "AI_Section", "distance": 5, "time": 5 },
+    {
+      "from": "Math_Section",
+      "to": "Physics_Section",
+      "distance": 6,
+      "time": 6
+    },
+    { "from": "Literature", "to": "History", "distance": 7, "time": 7 },
+    {
+      "from": "CS_Section",
+      "to": "Restricted_Archive",
+      "distance": 15,
+      "time": 15
+    },
+    {
+      "from": "Math_Section",
+      "to": "Restricted_Archive",
+      "distance": 20,
+      "time": 20
+    }
+  ],
+  "books": [
+    {
+      "id": "101",
+      "title": "Introduction to Algorithms",
+      "author": "Cormen",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "102",
+      "title": "Artificial Intelligence",
+      "author": "Norvig",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "103",
+      "title": "Calculus",
+      "author": "Stewart",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "104",
+      "title": "Secret AI Blueprints",
+      "author": "Unknown",
+      "category": "AI",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "105",
+      "title": "Quantum Mechanics",
+      "author": "Griffiths",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "106",
+      "title": "1984",
+      "author": "Orwell",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "107",
+      "title": "World War II",
+      "author": "Beevor",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Medium"
+    }
+  ]
+}
