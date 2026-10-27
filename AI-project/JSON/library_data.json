@@ -1,3 +1,4 @@
+
 {
   "nodes": {
     "Entrance": { "x": 0, "y": 0, "restricted": false },
@@ -11,18 +12,48 @@
     "Restricted_Archive": { "x": 6, "y": 0, "restricted": true }
   },
   "edges": [
-    { "from": "Entrance", "to": "CS_Section", "distance": 10, "time": 10 },
-    { "from": "Entrance", "to": "Math_Section", "distance": 8, "time": 8 },
-    { "from": "Entrance", "to": "Literature", "distance": 12, "time": 12 },
-    { "from": "Entrance", "to": "Reference", "distance": 5, "time": 5 },
-    { "from": "CS_Section", "to": "AI_Section", "distance": 5, "time": 5 },
+    {
+      "from": "Entrance",
+      "to": "CS_Section",
+      "distance": 10,
+      "time": 10
+    },
+    {
+      "from": "Entrance",
+      "to": "Math_Section",
+      "distance": 8,
+      "time": 8
+    },
+    {
+      "from": "Entrance",
+      "to": "Literature",
+      "distance": 12,
+      "time": 12
+    },
+    {
+      "from": "Entrance",
+      "to": "Reference",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "CS_Section",
+      "to": "AI_Section",
+      "distance": 5,
+      "time": 5
+    },
     {
       "from": "Math_Section",
       "to": "Physics_Section",
       "distance": 6,
       "time": 6
     },
-    { "from": "Literature", "to": "History", "distance": 7, "time": 7 },
+    {
+      "from": "Literature",
+      "to": "History",
+      "distance": 7,
+      "time": 7
+    },
     {
       "from": "CS_Section",
       "to": "Restricted_Archive",
@@ -34,6 +65,24 @@
       "to": "Restricted_Archive",
       "distance": 20,
       "time": 20
+    },
+    {
+      "from": "Reference",
+      "to": "Math_Section",
+      "distance": 6,
+      "time": 6
+    },
+    {
+      "from": "Reference",
+      "to": "Literature",
+      "distance": 8,
+      "time": 8
+    },
+    {
+      "from": "AI_Section",
+      "to": "Physics_Section",
+      "distance": 12,
+      "time": 12
     }
   ],
   "books": [
@@ -47,6 +96,33 @@
       "priority": "High"
     },
     {
+      "id": "108",
+      "title": "Data Structures and Algorithms in C++",
+      "author": "Michael T. Goodrich",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "109",
+      "title": "Operating System Concepts",
+      "author": "Silberschatz",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "110",
+      "title": "Computer Networking",
+      "author": "Andrew S. Tanenbaum",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
       "id": "102",
       "title": "Artificial Intelligence",
       "author": "Norvig",
@@ -56,17 +132,89 @@
       "priority": "High"
     },
     {
+      "id": "111",
+      "title": "Machine Learning",
+      "author": "Tom Mitchell",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "112",
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "113",
+      "title": "Artificial Intelligence: A Modern Approach",
+      "author": "Stuart Russell",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
       "id": "103",
       "title": "Calculus",
       "author": "Stewart",
       "category": "Math",
       "shelf": "Math_Section",
       "available": true,
-      "priority": "Medium"
+      "priority": "High"
+    },
+    {
+      "id": "114",
+      "title": "Linear Algebra and Its Applications",
+      "author": "Gilbert Strang",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "115",
+      "title": "Discrete Mathematics",
+      "author": "Kenneth Rosen",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "116",
+      "title": "Probability and Statistics",
+      "author": "Morris DeGroot",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Low"
     },
     {
       "id": "104",
       "title": "Secret AI Blueprints",
+      "author": "Unknown",
+      "category": "AI",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "117",
+      "title": "Confidential Neural Networks",
+      "author": "Unknown",
+      "category": "AI",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "118",
+      "title": "Experimental AI Research",
       "author": "Unknown",
       "category": "AI",
       "shelf": "Restricted_Archive",
@@ -80,12 +228,66 @@
       "category": "Physics",
       "shelf": "Physics_Section",
       "available": true,
-      "priority": "Medium"
+      "priority": "High"
+    },
+    {
+      "id": "119",
+      "title": "Fundamentals of Physics",
+      "author": "Halliday",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "120",
+      "title": "Concepts of Modern Physics",
+      "author": "Arthur Beiser",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "121",
+      "title": "Classical Mechanics",
+      "author": "John R. Taylor",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Low"
     },
     {
       "id": "106",
       "title": "1984",
       "author": "Orwell",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "122",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "123",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "124",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
       "category": "Literature",
       "shelf": "Literature",
       "available": true,
@@ -98,7 +300,61 @@
       "category": "History",
       "shelf": "History",
       "available": true,
-      "priority": "Medium"
+      "priority": "High"
+    },
+    {
+      "id": "125",
+      "title": "The Guns of August",
+      "author": "Barbara Tuchman",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "126",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "127",
+      "title": "India After Gandhi",
+      "author": "Ramachandra Guha",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "128",
+      "title": "Encyclopedia of Computer Science",
+      "author": "Various Authors",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "129",
+      "title": "Handbook of Mathematics",
+      "author": "Various Authors",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "130",
+      "title": "Technical Writing and Communication",
+      "author": "John M. Lannon",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Low"
     }
   ]
 }
