@@ -4,67 +4,152 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intelligent Library Search Agent</title>
-    <link rel="stylesheet" href="/static/style.css" />
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
-    ></script>
+    <link rel="stylesheet" href="/static/style.css?v=20261104b" />
+    <script src="/static/vendor/vis-network-9.1.9.min.js?v=20261104b" defer></script>
+    <script src="/static/script.js?v=20261104b" defer></script>
   </head>
   <body>
-    <div class="container">
-      <div class="sidebar">
-        <h2>Library AI Agent</h2>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Library agent controls">
+        <header class="brand">
+          <div class="brand-mark" aria-hidden="true">AI</div>
+          <div>
+            <h1>Library AI Agent</h1>
+            <p>Search, collect and navigate a classical search graph.</p>
+          </div>
+        </header>
 
-        <label>Search Book:</label>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Enter title or author..."
-        />
-        <button onclick="searchBook()">Find Book</button>
-        <p id="searchResult"></p>
-        <button onclick="addToCollection()">Add to Collection</button>
+        <section class="card" aria-labelledby="searchHeading">
+          <div class="card-heading">
+            <h2 id="searchHeading">Search</h2>
+            <span class="badge neutral" id="searchCount">0 matches</span>
+          </div>
+          <label for="searchInput">Title, author, category or shelf</label>
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            placeholder="Start typing, e.g. algorithms or Physics"
+            aria-describedby="searchHelp"
+          />
+          <p class="help" id="searchHelp">Live results appear as you type. Add any available book to the collection.</p>
+          <p class="status-line" id="searchStatus" aria-live="polite"></p>
+          <ul class="result-list" id="searchResults" aria-live="polite"></ul>
+        </section>
 
-        <hr />
+        <section class="card" id="collectionCard" aria-labelledby="collectionHeading">
+          <div class="card-heading">
+            <h2 id="collectionHeading">Collection</h2>
+            <span class="count-badge" id="collectionCount">0</span>
+          </div>
+          <p class="help">Books are planned High &rarr; Medium &rarr; Low. Reordering works inside each priority group.</p>
+          <p class="empty-state" id="collectionEmpty">No books in the collection yet.</p>
+          <ul class="collection-list" id="collectionList"></ul>
+          <button id="clearCollectionBtn" class="secondary-btn" type="button">Clear list</button>
+        </section>
 
-        <label>Collection List:</label>
-        <ul id="collectionList"></ul>
-        <button onclick="clearCollection()">Clear List</button>
+        <section class="card" id="navigationCard" aria-labelledby="navigationHeading">
+          <h2 id="navigationHeading">Navigation</h2>
+          <label for="targetBookSelect">Collection book to navigate to</label>
+          <select id="targetBookSelect" aria-describedby="targetHelp">
+            <option value="">Add a book first</option>
+          </select>
+          <p class="help" id="targetHelp">The route ends at the book&rsquo;s real shelf node.</p>
 
-        <hr />
+          <div class="field-row">
+            <div>
+              <label for="algoSelect">Algorithm</label>
+              <select id="algoSelect">
+                <option value="A*">A* Search</option>
+                <option value="BFS">BFS</option>
+                <option value="DFS">DFS</option>
+              </select>
+            </div>
+            <div>
+              <label for="optimizeSelect">Optimize for</label>
+              <select id="optimizeSelect">
+                <option value="distance">Shortest distance</option>
+                <option value="time">Fastest time (crowd-aware)</option>
+              </select>
+            </div>
+          </div>
 
-        <label>Algorithm (Single Book):</label>
-        <select id="algoSelect">
-          <option value="A*">A* Search</option>
-          <option value="BFS">BFS</option>
-          <option value="DFS">DFS</option>
-        </select>
+          <label class="check-row" for="authorizedToggle">
+            <input id="authorizedToggle" type="checkbox" />
+            <span>Authorized access</span>
+          </label>
+          <p class="help">Required to enter restricted sections. The flag is sent with every search.</p>
 
-        <button onclick="navigateSingle()" class="primary-btn">
-          Navigate Single Book
-        </button>
-        <label>Optimize For:</label>
-        <select id="optimizeSelect">
-          <option value="distance">Shortest Distance</option>
-          <option value="time">Fastest Time (Crowded Aisles)</option>
-        </select>
+          <details class="closed-details">
+            <summary>Closed sections (<span id="closedCount">0</span>)</summary>
+            <div class="checkbox-grid" id="closedSectionsList"></div>
+            <button id="clearClosedBtn" class="secondary-btn small-btn" type="button">Open all sections</button>
+          </details>
 
-        <label>Time/Cost Limit:</label>
-        <input type="number" id="timeLimit" value="100" />
-        <button onclick="navigateMulti()" class="success-btn">
-          Plan Multi-Book Route
-        </button>
+          <button id="navigateBtn" class="primary-btn" type="button">Navigate</button>
+          <button id="compareBtn" class="secondary-btn" type="button">Compare BFS / DFS / A*</button>
+        </section>
 
-        <div id="results">
-          <h3>Results:</h3>
-          <p id="resultText">Waiting for action...</p>
+        <section class="card" id="plannerCard" aria-labelledby="plannerHeading">
+          <h2 id="plannerHeading">Multi-Book Planner</h2>
+          <label for="timeLimit">Time / cost limit</label>
+          <input id="timeLimit" type="number" min="0" step="1" value="100" />
+          <p class="help">Compared against the selected metric. Greedy priority planning, not a globally optimal tour.</p>
+          <button id="planBtn" class="success-btn" type="button">Plan multi-book route</button>
+          <div class="limit-meter" id="limitMeter" hidden>
+            <div class="limit-meter-label">
+              <span>Limit used</span>
+              <span id="limitMeterText">0 / 0</span>
+            </div>
+            <div class="limit-meter-track"><div class="limit-meter-fill" id="limitMeterFill"></div></div>
+          </div>
+        </section>
+
+        <section class="card results-card" id="resultsCard" aria-labelledby="resultsHeading">
+          <div class="card-heading">
+            <h2 id="resultsHeading">Results</h2>
+            <span class="badge neutral" id="resultStatusBadge">Idle</span>
+          </div>
+          <div id="results" aria-live="polite" aria-atomic="true">
+            <p class="empty-state">Waiting for an action. Search for a book, add it, then navigate or plan.</p>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <header class="main-header">
+          <div>
+            <h2>Library map</h2>
+            <p>Light-blue sections, red restricted sections, grey closed sections, yellow books and green routes.</p>
+          </div>
+          <div class="graph-actions">
+            <label class="check-row compact" for="bookLabelsToggle">
+              <input id="bookLabelsToggle" type="checkbox" checked />
+              <span>Book labels</span>
+            </label>
+            <button id="fitViewBtn" class="secondary-btn" type="button">Fit / reset view</button>
+          </div>
+        </header>
+
+        <div class="legend" aria-label="Graph legend">
+          <span class="legend-item"><span class="legend-swatch section"></span>Section</span>
+          <span class="legend-item"><span class="legend-swatch restricted"></span>Restricted</span>
+          <span class="legend-item"><span class="legend-swatch closed"></span>Closed</span>
+          <span class="legend-item"><span class="legend-swatch book"></span>Book</span>
+          <span class="legend-item"><span class="legend-swatch route"></span>Route</span>
+          <span class="legend-item legend-note">Solid lines are walkways; dashed lines connect books to shelves.</span>
         </div>
-      </div>
 
-      <div class="main-content">
-        <div id="networkMap"></div>
-      </div>
+        <div class="graph-wrap">
+          <div id="networkMap" role="img" aria-label="Interactive library graph. Section and book nodes are also listed in the sidebar controls."></div>
+          <div id="graphError" class="graph-error" hidden>
+            The graph library could not be loaded. Check that the local Vis.js file exists.
+          </div>
+        </div>
+        <p class="help graph-hint">Click a section to highlight its books. Hover a node for details. Use Fit / reset view to recover the camera.</p>
+      </main>
     </div>
-    <script src="/static/script.js"></script>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
   </body>
 </html>

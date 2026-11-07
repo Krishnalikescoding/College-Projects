@@ -1,0 +1,1 @@
+View the complete project codebase in the [react-movie-finder GitHub repository](https://github.com/Krishnalikescoding/react-movie-finder).

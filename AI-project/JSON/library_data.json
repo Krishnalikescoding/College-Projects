@@ -1,34 +1,168 @@
-
 {
   "nodes": {
-    "Entrance": { "x": 0, "y": 0, "restricted": false },
-    "CS_Section": { "x": 2, "y": 2, "restricted": false },
-    "AI_Section": { "x": 4, "y": 4, "restricted": false },
-    "Math_Section": { "x": 2, "y": -2, "restricted": false },
-    "Physics_Section": { "x": 4, "y": -4, "restricted": false },
-    "Literature": { "x": -2, "y": 2, "restricted": false },
-    "History": { "x": -4, "y": 4, "restricted": false },
-    "Reference": { "x": -2, "y": -2, "restricted": false },
-    "Restricted_Archive": { "x": 6, "y": 0, "restricted": true }
+    "Entrance": {
+      "id": "Entrance",
+      "label": "Entrance",
+      "x": 0,
+      "y": 0,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "CS_Section": {
+      "id": "CS_Section",
+      "label": "Computer Science",
+      "x": 2,
+      "y": 2,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "AI_Section": {
+      "id": "AI_Section",
+      "label": "Artificial Intelligence",
+      "x": 4,
+      "y": 4,
+      "restricted": false,
+      "crowd": "Medium"
+    },
+    "Math_Section": {
+      "id": "Math_Section",
+      "label": "Mathematics",
+      "x": 2,
+      "y": -2,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Physics_Section": {
+      "id": "Physics_Section",
+      "label": "Physics",
+      "x": 4,
+      "y": -4,
+      "restricted": false,
+      "crowd": "Medium"
+    },
+    "Literature": {
+      "id": "Literature",
+      "label": "Literature",
+      "x": -2,
+      "y": 2,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "History": {
+      "id": "History",
+      "label": "History",
+      "x": -4,
+      "y": 4,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Reference": {
+      "id": "Reference",
+      "label": "Reference",
+      "x": -2,
+      "y": -2,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Restricted_Archive": {
+      "id": "Restricted_Archive",
+      "label": "Restricted Archive",
+      "x": 6,
+      "y": 0,
+      "restricted": true,
+      "crowd": "High"
+    },
+    "Chemistry_Section": {
+      "id": "Chemistry_Section",
+      "label": "Chemistry",
+      "x": -4,
+      "y": -4,
+      "restricted": false,
+      "crowd": "Medium"
+    },
+    "Biology_Section": {
+      "id": "Biology_Section",
+      "label": "Biology",
+      "x": -6,
+      "y": -2,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Periodicals": {
+      "id": "Periodicals",
+      "label": "Periodicals",
+      "x": 0,
+      "y": 6,
+      "restricted": false,
+      "crowd": "Medium"
+    },
+    "Reading_Room": {
+      "id": "Reading_Room",
+      "label": "Reading Room",
+      "x": -6,
+      "y": 6,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Digital_Lab": {
+      "id": "Digital_Lab",
+      "label": "Digital Lab",
+      "x": 6,
+      "y": 4,
+      "restricted": false,
+      "crowd": "High"
+    },
+    "Research_Archive": {
+      "id": "Research_Archive",
+      "label": "Research Archive",
+      "x": 8,
+      "y": -2,
+      "restricted": true,
+      "crowd": "Medium"
+    },
+    "Media_Section": {
+      "id": "Media_Section",
+      "label": "Media",
+      "x": 2,
+      "y": 6,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Languages_Section": {
+      "id": "Languages_Section",
+      "label": "Languages",
+      "x": -6,
+      "y": 0,
+      "restricted": false,
+      "crowd": "Low"
+    },
+    "Quiet_Study": {
+      "id": "Quiet_Study",
+      "label": "Quiet Study",
+      "x": 0,
+      "y": -6,
+      "restricted": false,
+      "crowd": "Low"
+    }
   },
   "edges": [
     {
       "from": "Entrance",
       "to": "CS_Section",
-      "distance": 10,
-      "time": 10
+      "distance": 8,
+      "time": 14
     },
     {
       "from": "Entrance",
       "to": "Math_Section",
-      "distance": 8,
+      "distance": 6,
       "time": 8
     },
     {
       "from": "Entrance",
       "to": "Literature",
-      "distance": 12,
-      "time": 12
+      "distance": 7,
+      "time": 7
     },
     {
       "from": "Entrance",
@@ -37,8 +171,86 @@
       "time": 5
     },
     {
+      "from": "Entrance",
+      "to": "Periodicals",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Entrance",
+      "to": "Quiet_Study",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Entrance",
+      "to": "Physics_Section",
+      "distance": 40,
+      "time": 10
+    },
+    {
       "from": "CS_Section",
       "to": "AI_Section",
+      "distance": 5,
+      "time": 9
+    },
+    {
+      "from": "CS_Section",
+      "to": "Math_Section",
+      "distance": 6,
+      "time": 6
+    },
+    {
+      "from": "CS_Section",
+      "to": "Literature",
+      "distance": 6,
+      "time": 6
+    },
+    {
+      "from": "CS_Section",
+      "to": "Periodicals",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "CS_Section",
+      "to": "Media_Section",
+      "distance": 6,
+      "time": 6
+    },
+    {
+      "from": "CS_Section",
+      "to": "Restricted_Archive",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "AI_Section",
+      "to": "Physics_Section",
+      "distance": 12,
+      "time": 12
+    },
+    {
+      "from": "AI_Section",
+      "to": "Digital_Lab",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "AI_Section",
+      "to": "Periodicals",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "AI_Section",
+      "to": "Restricted_Archive",
+      "distance": 10,
+      "time": 10
+    },
+    {
+      "from": "AI_Section",
+      "to": "Media_Section",
       "distance": 5,
       "time": 5
     },
@@ -49,38 +261,200 @@
       "time": 6
     },
     {
+      "from": "Math_Section",
+      "to": "Reference",
+      "distance": 6,
+      "time": 4
+    },
+    {
+      "from": "Math_Section",
+      "to": "Chemistry_Section",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Math_Section",
+      "to": "Quiet_Study",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Math_Section",
+      "to": "Restricted_Archive",
+      "distance": 12,
+      "time": 12
+    },
+    {
+      "from": "Math_Section",
+      "to": "Research_Archive",
+      "distance": 10,
+      "time": 10
+    },
+    {
+      "from": "Physics_Section",
+      "to": "Chemistry_Section",
+      "distance": 12,
+      "time": 12
+    },
+    {
+      "from": "Physics_Section",
+      "to": "Quiet_Study",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Physics_Section",
+      "to": "Research_Archive",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Physics_Section",
+      "to": "Digital_Lab",
+      "distance": 12,
+      "time": 12
+    },
+    {
       "from": "Literature",
       "to": "History",
       "distance": 7,
       "time": 7
     },
     {
-      "from": "CS_Section",
-      "to": "Restricted_Archive",
-      "distance": 15,
-      "time": 15
+      "from": "Literature",
+      "to": "Reading_Room",
+      "distance": 9,
+      "time": 9
     },
     {
-      "from": "Math_Section",
-      "to": "Restricted_Archive",
-      "distance": 20,
-      "time": 20
+      "from": "Literature",
+      "to": "Languages_Section",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Literature",
+      "to": "Reference",
+      "distance": 8,
+      "time": 8
+    },
+    {
+      "from": "Literature",
+      "to": "Periodicals",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "History",
+      "to": "Reading_Room",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "History",
+      "to": "Languages_Section",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "History",
+      "to": "Media_Section",
+      "distance": 9,
+      "time": 9
     },
     {
       "from": "Reference",
-      "to": "Math_Section",
+      "to": "Languages_Section",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Reference",
+      "to": "Biology_Section",
       "distance": 6,
       "time": 6
     },
     {
       "from": "Reference",
-      "to": "Literature",
-      "distance": 8,
-      "time": 8
+      "to": "Chemistry_Section",
+      "distance": 5,
+      "time": 5
     },
     {
-      "from": "AI_Section",
-      "to": "Physics_Section",
+      "from": "Reference",
+      "to": "Quiet_Study",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Restricted_Archive",
+      "to": "Digital_Lab",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Restricted_Archive",
+      "to": "Research_Archive",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "Chemistry_Section",
+      "to": "Biology_Section",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "Chemistry_Section",
+      "to": "Quiet_Study",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Biology_Section",
+      "to": "Languages_Section",
+      "distance": 6,
+      "time": 6
+    },
+    {
+      "from": "Biology_Section",
+      "to": "Reading_Room",
+      "distance": 10,
+      "time": 10
+    },
+    {
+      "from": "Periodicals",
+      "to": "Media_Section",
+      "distance": 5,
+      "time": 5
+    },
+    {
+      "from": "Periodicals",
+      "to": "Reading_Room",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Media_Section",
+      "to": "Digital_Lab",
+      "distance": 7,
+      "time": 7
+    },
+    {
+      "from": "Languages_Section",
+      "to": "Reading_Room",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Digital_Lab",
+      "to": "Research_Archive",
+      "distance": 9,
+      "time": 9
+    },
+    {
+      "from": "Research_Archive",
+      "to": "Quiet_Study",
       "distance": 12,
       "time": 12
     }
@@ -355,6 +729,681 @@
       "shelf": "Reference",
       "available": true,
       "priority": "Low"
+    },
+    {
+      "id": "131",
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "132",
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "133",
+      "title": "Database System Concepts",
+      "author": "Abraham Silberschatz",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "134",
+      "title": "Computer Organization and Design",
+      "author": "David A. Patterson",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "135",
+      "title": "Compiler Design",
+      "author": "Alfred V. Aho",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": false,
+      "priority": "High"
+    },
+    {
+      "id": "136",
+      "title": "Software Engineering",
+      "author": "Ian Sommerville",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "137",
+      "title": "Cybersecurity Fundamentals",
+      "author": "William Stallings",
+      "category": "CS",
+      "shelf": "CS_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "138",
+      "title": "Pattern Recognition and Machine Learning",
+      "author": "Christopher Bishop",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "139",
+      "title": "Reinforcement Learning",
+      "author": "Richard S. Sutton",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "140",
+      "title": "Natural Language Processing",
+      "author": "Daniel Jurafsky",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "141",
+      "title": "Computer Vision",
+      "author": "Richard Szeliski",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "142",
+      "title": "Knowledge Representation",
+      "author": "Ronald Brachman",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "143",
+      "title": "Expert Systems",
+      "author": "Peter Jackson",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "144",
+      "title": "AI Ethics",
+      "author": "Mark Coeckelbergh",
+      "category": "AI",
+      "shelf": "AI_Section",
+      "available": false,
+      "priority": "Medium"
+    },
+    {
+      "id": "145",
+      "title": "Advanced Engineering Mathematics",
+      "author": "Erwin Kreyszig",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "146",
+      "title": "Numerical Analysis",
+      "author": "Richard Burden",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "147",
+      "title": "Graph Theory",
+      "author": "Reinhard Diestel",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "148",
+      "title": "Introduction to Topology",
+      "author": "James Munkres",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "149",
+      "title": "Optimization Methods",
+      "author": "Jorge Nocedal",
+      "category": "Math",
+      "shelf": "Math_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "150",
+      "title": "Electrodynamics",
+      "author": "David J. Griffiths",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "151",
+      "title": "Thermodynamics",
+      "author": "Enrico Fermi",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "152",
+      "title": "Optics",
+      "author": "Eugene Hecht",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "153",
+      "title": "Astrophysics",
+      "author": "Neil deGrasse Tyson",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "154",
+      "title": "Nuclear Physics",
+      "author": "Kenneth Krane",
+      "category": "Physics",
+      "shelf": "Physics_Section",
+      "available": false,
+      "priority": "High"
+    },
+    {
+      "id": "155",
+      "title": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "156",
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "157",
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel Garcia Marquez",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "158",
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "159",
+      "title": "The Hobbit",
+      "author": "J. R. R. Tolkien",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "160",
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "category": "Literature",
+      "shelf": "Literature",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "161",
+      "title": "A People's History",
+      "author": "Howard Zinn",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "162",
+      "title": "The Silk Roads",
+      "author": "Peter Frankopan",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "163",
+      "title": "Postcolonial India",
+      "author": "Ramachandra Guha",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "164",
+      "title": "The Age of Revolutions",
+      "author": "Eric Hobsbawm",
+      "category": "History",
+      "shelf": "History",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "165",
+      "title": "Ancient Civilizations",
+      "author": "Charles Gates",
+      "category": "History",
+      "shelf": "History",
+      "available": false,
+      "priority": "Low"
+    },
+    {
+      "id": "166",
+      "title": "Oxford English Dictionary",
+      "author": "Oxford University Press",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "167",
+      "title": "Atlas of World History",
+      "author": "Patrick O'Brien",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "168",
+      "title": "Research Methods Handbook",
+      "author": "John Creswell",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "169",
+      "title": "Statistical Tables",
+      "author": "Ronald Fisher",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "170",
+      "title": "Citation and Style Guide",
+      "author": "Kate Turabian",
+      "category": "Reference",
+      "shelf": "Reference",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "171",
+      "title": "Classified Algorithms",
+      "author": "Anonymous",
+      "category": "AI",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "172",
+      "title": "Advanced Cryptography Notes",
+      "author": "Anonymous",
+      "category": "CS",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "173",
+      "title": "Experimental Robotics",
+      "author": "Anonymous",
+      "category": "AI",
+      "shelf": "Restricted_Archive",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "174",
+      "title": "Archived Research Methods",
+      "author": "Anonymous",
+      "category": "Reference",
+      "shelf": "Restricted_Archive",
+      "available": false,
+      "priority": "Low"
+    },
+    {
+      "id": "175",
+      "title": "Organic Chemistry",
+      "author": "Paula Bruice",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "176",
+      "title": "Inorganic Chemistry",
+      "author": "Gary Miessler",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "177",
+      "title": "Physical Chemistry",
+      "author": "Peter Atkins",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "178",
+      "title": "Analytical Chemistry",
+      "author": "Daniel Harris",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "179",
+      "title": "Biochemistry",
+      "author": "Jeremy Berg",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "180",
+      "title": "Green Chemistry",
+      "author": "Paul Anastas",
+      "category": "Chemistry",
+      "shelf": "Chemistry_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "181",
+      "title": "Molecular Biology of the Cell",
+      "author": "Bruce Alberts",
+      "category": "Biology",
+      "shelf": "Biology_Section",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "182",
+      "title": "Genetics",
+      "author": "Benjamin Pierce",
+      "category": "Biology",
+      "shelf": "Biology_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "183",
+      "title": "Ecology",
+      "author": "Robert Ricklefs",
+      "category": "Biology",
+      "shelf": "Biology_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "184",
+      "title": "Human Physiology",
+      "author": "Stuart Fox",
+      "category": "Biology",
+      "shelf": "Biology_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "185",
+      "title": "Microbiology",
+      "author": "Gerard Tortora",
+      "category": "Biology",
+      "shelf": "Biology_Section",
+      "available": false,
+      "priority": "Low"
+    },
+    {
+      "id": "186",
+      "title": "Nature: Selected Issues",
+      "author": "Nature Editorial",
+      "category": "Periodicals",
+      "shelf": "Periodicals",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "187",
+      "title": "Science: Selected Issues",
+      "author": "Science Editorial",
+      "category": "Periodicals",
+      "shelf": "Periodicals",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "188",
+      "title": "IEEE Spectrum Archive",
+      "author": "IEEE Staff",
+      "category": "Periodicals",
+      "shelf": "Periodicals",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "189",
+      "title": "Scientific American Anthology",
+      "author": "Various Authors",
+      "category": "Periodicals",
+      "shelf": "Periodicals",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "190",
+      "title": "Journal of AI Research",
+      "author": "AAAI Staff",
+      "category": "Periodicals",
+      "shelf": "Periodicals",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "191",
+      "title": "The Art of Reading",
+      "author": "Mortimer Adler",
+      "category": "Reference",
+      "shelf": "Reading_Room",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "192",
+      "title": "Quiet Reading Collection",
+      "author": "Library Staff",
+      "category": "Literature",
+      "shelf": "Reading_Room",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "193",
+      "title": "Book Clubs and Discussion",
+      "author": "Jane Brown",
+      "category": "Literature",
+      "shelf": "Reading_Room",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "194",
+      "title": "Human-Computer Interaction",
+      "author": "Alan Dix",
+      "category": "CS",
+      "shelf": "Digital_Lab",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "195",
+      "title": "Cloud Computing",
+      "author": "Thomas Erl",
+      "category": "CS",
+      "shelf": "Digital_Lab",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "196",
+      "title": "Digital Signal Processing",
+      "author": "Alan Oppenheim",
+      "category": "CS",
+      "shelf": "Digital_Lab",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "197",
+      "title": "Unpublished AI Studies",
+      "author": "Research Faculty",
+      "category": "AI",
+      "shelf": "Research_Archive",
+      "available": true,
+      "priority": "High"
+    },
+    {
+      "id": "198",
+      "title": "Restricted Data Science",
+      "author": "Research Faculty",
+      "category": "CS",
+      "shelf": "Research_Archive",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "199",
+      "title": "Experimental Computing",
+      "author": "Research Faculty",
+      "category": "CS",
+      "shelf": "Research_Archive",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "200",
+      "title": "Film and Media Studies",
+      "author": "David Bordwell",
+      "category": "Media",
+      "shelf": "Media_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "201",
+      "title": "Digital Media Production",
+      "author": "John Owens",
+      "category": "Media",
+      "shelf": "Media_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "202",
+      "title": "Introduction to Linguistics",
+      "author": "George Yule",
+      "category": "Languages",
+      "shelf": "Languages_Section",
+      "available": true,
+      "priority": "Medium"
+    },
+    {
+      "id": "203",
+      "title": "World Languages",
+      "author": "Bernard Comrie",
+      "category": "Languages",
+      "shelf": "Languages_Section",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "204",
+      "title": "Study Skills for Life",
+      "author": "Stella Cottrell",
+      "category": "Reference",
+      "shelf": "Quiet_Study",
+      "available": true,
+      "priority": "Low"
+    },
+    {
+      "id": "205",
+      "title": "Focus and Memory",
+      "author": "Daniel Willingham",
+      "category": "Reference",
+      "shelf": "Quiet_Study",
+      "available": true,
+      "priority": "Medium"
     }
   ]
 }
